@@ -14,6 +14,8 @@ export default function configureStore(
   const store = createStore(
     createRootReducer(),
     initialState,
+
+    // allows async actions
     applyMiddleware(thunk)
   );
   return store;
