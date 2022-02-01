@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-
+import { fetchRequest } from "../../store/inventory/action";
 import ProductItem from "../ProductItem";
 import { ApplicationState } from "../../store";
 import { Inventory } from "../../store/inventory/types";
-import { fetchRequest } from "../../store/inventory/action";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 
@@ -39,10 +38,8 @@ const HomePage: React.FC<AllProps> = ({
   fetchRequest
 }) => {
   useEffect(() => {
-    alert('test')
     fetchRequest();
-    alert('test2')
-  }, []);
+  }, [fetchRequest]);
 
   return (
     <Container>

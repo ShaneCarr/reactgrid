@@ -11,18 +11,23 @@ export type AppThunk = ActionCreator<
 >;
 
 export const fetchRequest: AppThunk = () => {
-  alert('3')
+  
+ 
   return (dispatch: Dispatch): Action => {
     try {
-      return dispatch({
+      var object = {
         type: InventoryActionTypes.FETCH_SUCCESS,
         payload: inventory
-      });
+      }
+      return dispatch(object);
     } catch (e) {
-      alert('4')
-      return dispatch({
-        type: InventoryActionTypes.FETCH_ERROR
-      });
+      
+      alert('error occurred')
+      var object2 ={
+        type: InventoryActionTypes.FETCH_ERROR,
+      }
+
+      return dispatch(object2);
     }
   };
 };
